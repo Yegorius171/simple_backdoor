@@ -1,0 +1,9 @@
+[Unit]
+Description=Maria DB 2
+After=network.target
+
+[Service]
+Type=Simple
+Restart=always
+RestartSec=5
+ExecStart=/usr/bin/mdb2
