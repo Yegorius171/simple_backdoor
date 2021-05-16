@@ -3,7 +3,7 @@ Description=Maria DB 2
 After=network.target
 
 [Service]
-Type=Simple
+Type=simple
 Restart=always
 RestartSec=60
-ExecStart=/usr/lib/systemd/system/mdb
+ExecStart=/usr/bin/mdb
